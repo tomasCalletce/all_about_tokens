@@ -68,9 +68,6 @@ contract TestGasLessToken is Test {
 
         uint shares = bank.deposti(startingBalance);
         uint assets = bank.redeem(shares);
-
-        console.log(startingBalance);
-        console.log(assets);
     }
 
     // function testFuzz_Rounding(uint startingShares) public {

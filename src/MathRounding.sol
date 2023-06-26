@@ -49,12 +49,12 @@ contract MathRounding  {
         return shares;
     }
 
-    function (uint amount,uint direction) external returns(uint amountOut){
+    function swap(uint amount,uint direction) external returns(uint amountOut){
         if(direction == 0){
             amountOut = (amount*token0Totoken1Rate)/SCALAR;
 
             token0.transferFrom(msg.sender,address(this), amount);
-            token1.transfer(swapmsg.sender,amountOut);
+            token1.transfer(msg.sender,amountOut);
         }else{
             amountOut = (amount*SCALAR)/token0Totoken1Rate;
 
